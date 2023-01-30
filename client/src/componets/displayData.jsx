@@ -6,7 +6,12 @@ import EditForm from "./EditForm";
 
 const displayData = (props) => {
   const { list, edit, handleDelete, handleEdit } = props;
-
+  const generateColor = () => {
+    const randomColor = Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, '0');
+    return `#${randomColor}`;
+  };
   return (
     <div>
       <Navbar />
@@ -28,7 +33,7 @@ const displayData = (props) => {
                   list.map((item, i) => {
                     return (
                       <tr key={i}>
-                        <td className="circle">{item.Firstname[0]}</td>
+                        <td className="circle"style={{backgroundColor: generateColor()}}>{item.Firstname[0]}</td>
                         <td>{item.Firstname}</td>
                         <td>{item.Number}</td>
                         <td>{item.Email}</td>

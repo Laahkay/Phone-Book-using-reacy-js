@@ -100,7 +100,7 @@ tr td {
   background-color: #ff0019; /* Green */
   border: none;
   color: white;
-  padding: 2px 4px;
+  padding: 2px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -113,7 +113,7 @@ tr td {
   background-color: #0095ff; /* Green */
   border: none;
   color: white;
-  padding: 2px 12px;
+  padding: 2px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -123,9 +123,10 @@ tr td {
 
 }
 .circle {
-  width: 30px;
-  height: 40px;
-  
+  height: 35px;
+  width: 35px;
+  background-color: #bbb;
   border-radius: 50%;
+  display: inline-block;
   text-align:center;
 }
