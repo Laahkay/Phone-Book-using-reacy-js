@@ -1,122 +1,124 @@
 body {
-  text-align: center;
-  background-image: url("https://images7.alphacoders.com/887/thumb-1920-887725.jpg");
-background-size: cover;
-}
-.App {
-  text-align: center;
   
+  /* background-image: url("https://images7.alphacoders.com/887/thumb-1920-887725.jpg"); */
+background-size: cover;
+background-color: white;
+}
+.App{
+  text-align: center;
+ 
+}
+.forms {
+
+ 
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  padding: 10px;
+  border-radius: 9px;
+  padding: 15px;
+}
+.form {
+position: relative;
+left: 40%;
+max-width: 230px;
+  height: auto;
+  background-color: rgb(192, 207, 213);
+  background-size: cover;
+  padding: 5px;
+  
+}
+.butt{
+  background-color: #2292c2; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 78px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.CancelButton{
+  background-color: #515354; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 70px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 3%;
+}
+
+input:placeholder-shown {
+  border-color: rgb(106, 102, 102);
+  background-color: rgb(213, 227, 233);
+  font-weight: bold;
+  color: black;
+  /* padding: 10px; */
+}
+
+/* ::placeholder {
+  color: rgb(0, 0, 0);
+  background-color: thistle;
+  font-size: 10px;
+  text-transform: uppercase;
+} */
+
+label{
+  font-weight: bold;
+  list-style: none;
+}
+label:name{
+ 
+  list-style: none;
+}
+.nav{
+  justify-content: space-around;
+background-color: rgb(155, 152, 155);
 }
 
 table {
-  width: 100%;
   position: relative;
-  left: 35%;
-  margin: 0 auto;
-display: block;
-  border-collapse: separate;
-  border-spacing: 1;
+  left: 25%;
+  border-collapse: collapse;
+  width: 50%;
 }
 
-/* tbody tr:nth-child(odd) {
-  background-color: #f90000;
-} */
-
-th, td { /* cell */
-  padding: 0.75rem;
-  font-size: 0.9375rem;
-}
-
-th { /* header cell */
-  font-weight: 700;
+tr th {
+  font-size: 18px;
+  padding: 12px;
+  border: 1px solid #eeeeee;
   text-align: left;
-  color: #272838;
-  border-bottom: 2px solid #EB9486;
-
-  position: sticky;
-  top: 0;
-  background-color: #F9F8F8;
+  background-color: rgba(217, 221, 146, 0.2);
 }
 
-td { /* body cell */
-  color: #7E7F9A;
+tr td {
+  border: 1px solid #eeeeee;
+  text-align: left;
 }
-.form {
+.buttonDelete{
+  background-color: #ff0019; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 4px;
   text-align: center;
-  max-width: 300px;
-  background: linear-gradient(135deg, rgba(133, 116, 116, 0.2), rgba(255, 255, 255, 0.141));
-  background-size: cover;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0px 15px 20px rgb(0, 0, 0);
-  overflow: hidden;
-  position: relative;
-  left:36%;
-  font-family: 'Bungee', cursive;
-  font-style: italic;
-  color: #000000;
-  text-decoration: red;
-  display: block;
-  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10%;
+  margin-left: 10px;
+  font-weight: bold;
 }
-.butt {
-	background: none;
-	border: 3px solid #668085;
-	color: #000000;
-	transition: border 300ms ease, transform 800ms ease;
-	border-radius: 50px;
-  font-style: italic;
-  font-size: 16px;
-}
-
-.butt:hover {
-	transform: scale(1.05);
-	border-color: #90e0ef transparent;
-}
-
-.butt:active {
-	transform: scale(0.9);
-}
-input[type=text], select, textarea {
-  width: 90%;
-  padding: 12px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 4px;
-  resize: vertical;
-  border-radius:11px;
-  display: flex;
-}
-input[type=email], select, textarea {
-  width: 90%;
-  padding: 12px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 4px;
-  resize: vertical;
-  border-radius:11px;
-}
-input[type=number], select, textarea {
-  width: 90%;
-  padding: 12px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 4px;
-  resize: vertical;
-  border-radius:11px;
-}
-input {
+.buttonEdit{
+  background-color: #0095ff; /* Green */
+  border: none;
+  color: white;
+  padding: 2px 12px;
   text-align: center;
-}
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 10px;
+  font-weight: bold;
 
-::-webkit-input-placeholder {
-  text-align: center;
-}
-
-:-moz-placeholder {
-  text-align: center;
-}
-.nav {
-  background-color: #000000;
-  
-  display: flex;
-  border-collapse: separate;
-  border-spacing: 10;
 }

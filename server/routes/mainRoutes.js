@@ -1,6 +1,8 @@
 const PhoneBook = require("../models/mySchemas");
+
 const savePhoneBook = (app) => {
-  app.post("/save", async (req, res) => {
+
+  app.post("/phoneBook", async (req, res) => {
     try {
       let { Firstname, Number, Email } = req.body;
       let phoneBook = new PhoneBook({
@@ -18,6 +20,7 @@ const savePhoneBook = (app) => {
       res.send({ message: "Post Error" }).status(404);
     }
   });
+
   app.get("/Contact", async (req, res) => {
     try {
       const findPhoneBooks = await PhoneBook.find();
@@ -26,6 +29,7 @@ const savePhoneBook = (app) => {
       console.log({ message: "Get Error" });
     }
   });
+
   app.get("/phone/:id", async (req, res) => {
     try {
       const findPhoneBook = await PhoneBook.findById(req.body.id);
@@ -35,7 +39,7 @@ const savePhoneBook = (app) => {
     }
   });
 
-app.put('/update/:id', async (req,res) =>{
+  app.put('/update/:id', async (req,res) =>{
    const { id } = req.params;
    let { Firstname, Number, Email } = req.body;
 
@@ -47,18 +51,7 @@ app.put('/update/:id', async (req,res) =>{
    } catch (error) {
       console.log({ message: "Editing Unsuccesfully" });
    }
-})
-app.put('/contact/:id',async(req,res)=>{
-  try {
-    const { id } = req.params;
-    const FindContact = await PhoneBook.findByIdAndUpdate({id:id})
-    
-    res.send({ message: "Succesfully Updated", FindContact});
- } catch (error) {
-    console.log({ message: "Deleting Unsuccesfully" })
-    res.sendStatus(404)
- }
-})
+  })
 
   app.delete('/delete/:id', async (req, res) =>{
    try {
@@ -71,5 +64,6 @@ app.put('/contact/:id',async(req,res)=>{
       res.sendStatus(404)
    }
   });
+
 };
 module.exports = {savePhoneBook}

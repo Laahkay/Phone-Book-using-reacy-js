@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Form from "./form";
+import Forms from "./form";
+// import Forms from "./myForm";
 import Form2 from "./EditForm";
 import axios from "axios";
 import { useNavigate, Routes, Route } from "react-router-dom";
-import { v4 } from "uuid";
+// import { v4 } from "uuid";
 import Display from "./displayData";
 
 const Main = () => {
@@ -47,7 +48,7 @@ const Main = () => {
     } else {
       try {
         const savePhoneBook = await axios.post(
-          "http://localhost:9090/save",
+          "http://localhost:9090/phoneBook",
           formInfo
         );
         Contact();
@@ -75,8 +76,8 @@ const Main = () => {
       return alert("Fill up all the input");
     } else {
       try {
-        const savePhoneBook = await axios.post(
-          "http://localhost:9090/save",
+        const savePhoneBook = await axios.put(
+          "http://localhost:9090/phoneBook",
           formInfo
         );
         Contact();
@@ -106,8 +107,11 @@ const Main = () => {
   const handleDelete = (id) => {
     fetch(`http://localhost:9090/delete/${id}`, {
       method: "DELETE",
+      
     })
       .then((res) => {
+
+
         if (!res) {
           throw new Error("Something Went Wrong");
         }
@@ -119,19 +123,18 @@ const Main = () => {
  
   const handleEdit = async (id) => {
     setEdit(true)
-    console.log("id", id)
-    fetch(`http://localhost:9090/contact/:id`, {
-      method: "PUT",list
-    })
-      .then((res) => {
-        if (!res) {
-          throw new Error("Something Went Wrong");
-        }
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-      console.log("id", id)
+const userData = await axios.get(
+              `http://localhost:9090/phone/${id}`,
+              list
+            ).then((res) => {
+              if (!res) {
+                throw new Error("Something Went Wrong");
+              }
+            })
+            .catch((e) => {
+              console.log(e);
+            });
+            return userData
   }
   
   
@@ -143,7 +146,7 @@ const Main = () => {
           path="/"
           exact
           element={
-            <Form
+            <Forms
               handleChange={handleChange}
               handleSubmit={handleSubmit}
               handleDelete={handleDelete}

@@ -2,20 +2,22 @@ import React from "react";
 // import {Link} from 'react-router-dom';
 import Navbar from "./navBar";
 // import Form from "./form"
-import EditForm from './EditForm'
+import EditForm from "./EditForm";
 
 const displayData = (props) => {
-  const { list, edit, handleDelete, handleEdit  } = props;
+  const { list, edit, handleDelete, handleEdit } = props;
 
   return (
     <div>
       <Navbar />
-      
+
       <div>
+        <br />
         {!edit ? (
           <div>
             <table>
               <tr>
+              <th>Profile</th>
                 <th>Name</th>
                 <th>Contact</th>
                 <th>Email</th>
@@ -26,14 +28,16 @@ const displayData = (props) => {
                   list.map((item, i) => {
                     return (
                       <tr key={i}>
+                        <td>{}</td>
                         <td>{item.Firstname}</td>
                         <td>{item.Number}</td>
                         <td>{item.Email}</td>
                         <td>
-                        <button onClick={() => handleDelete(item.id)}>
+                          <button className="buttonDelete" onClick={() => handleDelete(item.id)}>
                             Delete
                           </button>
-                          <button onClick={() => handleEdit(item.id)}>
+                          {/* <br /> */}
+                          <button className="buttonEdit" onClick={() => handleEdit(item.id)}>
                             Edit
                           </button>
                         </td>
@@ -52,5 +56,3 @@ const displayData = (props) => {
 };
 
 export default displayData;
-
-
