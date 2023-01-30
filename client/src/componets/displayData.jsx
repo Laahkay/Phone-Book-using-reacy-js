@@ -28,7 +28,7 @@ const displayData = (props) => {
                   list.map((item, i) => {
                     return (
                       <tr key={i}>
-                        <td>{}</td>
+                        <td className="circle">{item.Firstname[0]}</td>
                         <td>{item.Firstname}</td>
                         <td>{item.Number}</td>
                         <td>{item.Email}</td>

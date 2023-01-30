@@ -32,7 +32,7 @@ const Forms = (props) => {
                 message: "Please input your E-mail!",
               },
             ]}
-             label="Name" Name
+             label="Name" 
           >
             <Input
               label="Name"
